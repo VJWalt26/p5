@@ -5,17 +5,20 @@ function newNames(){
 	setHTML("NewNames" , "");
 	var NameGet = getInput("NameNum");
 			//adjectives for Spirit Animal;
-		var NameFirst = ["Cowardly", " Presumptuous", " Condescending", " Fat", " Bumbling", " Laughing", " Snobby" , (getInput("FirstNames").split(" "))];
-			//Spirit Animals;
-		
-			//New Variable to describe Spirit Animal;
 		
 		for (var i = 0; i < NameGet; i++){
-		var NameLast = ["Ant ", "Tuna ", "Clam ", "Tiger ", "Giraffe ", "Zebra ", "Sparrow" , (getInput("LastNames").split(" "))];
+		var NameFirst = ["Cowardly", " Presumptuous", " Condescending", " Fat", " Bumbling", " Laughing", "Snobby".split(" ")];
+		var GetFirst = (getInput("FirstNames").split(" "));
+		var FirstAll = NameFirst.concat(GetFirst);
+		
+		var NameLast = ["Ant ", "Tuna ", "Clam ", "Tiger ", "Giraffe ", "Zebra ", "Sparrow" .split(" ")];
 			//random adjectives for Spirit Animals
-		var FirstLog = NameFirst[Math.floor(Math.random() * NameFirst.length)];
+		var GetLast = (getInput("LastNames").split(" "));
+		var LastAll = NameLast.concat(GetLast);
+
+		var FirstLog = FirstAll[Math.floor(Math.random() * FirstAll.length)];
 			//random Spirit Animals
-		var LastLog = NameLast[Math.floor(Math.random() * NameLast.length)];
+		var LastLog = LastAll[Math.floor(Math.random() * LastAll.length)];
 		var NameCreate = FirstLog + " " + LastLog + "<br />";
 			console.log(NameCreate);
 			addHTML("NewNames" , NameCreate);
